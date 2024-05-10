@@ -7,18 +7,18 @@ import Alert from "./Alert/alert";
 import { useState } from "react";
 
 const name = "Caroline Bates";
-export const siteTitle = "Next.js Sample Website";
+export const siteTitle = "Blog";
 
 export default function Layout({ children, home }) {
   const [alertType, setAlertType] = useState("success");
-  console.log({ home });
+
   return (
     <div className={styles.container}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
-          content="Learn how to build a personal website using Next.js"
+          content="Blog using Next.js"
         />
         <meta
           property="og:image"
