@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../../lib/supabase/server";
 import styles from "./comments.module.css";
+import Alert from "../Alert/alert";
 
 export default function Comments({ postData }) {
   const [comment, setComment] = useState("");
   const [email, setEmail] = useState("");
   const [nickname, setNickname] = useState("");
   const [commentList, setCommentList] = useState([]);
+  const [alertType, setAlertType] = useState('noAlert')
 
   const getCommentList = async () => {
     const { data, error } = await supabase
@@ -52,19 +54,27 @@ export default function Comments({ postData }) {
         setComment("");
         setEmail("");
         setNickname("");
+        setAlertType('success')
       } else {
         console.error("Error:", data.error);
+        setAlertType('error')
       }
     } catch (error) {
       console.error("Network error:", error);
+      setAlertType('error')
     } finally {
       setLoading(false);
     }
   };
 
+  const switchDescription = () => {
+    if (alertType === 'success') return <p className={styles.description}>Your comment has been sent and is waiting approval. Once approved, it will become visible to all. </p>
+    else return <p className={styles.description}>There was an error sending your comment. Try again later.</p>
+  }
+
   return (
     <div className={styles.commentWrapper}>
-      <div className="baseFlex flexColumn fullWidth padding1_0">
+      <div className={styles.comments}>
         {commentList.length > 0 && (
           <>
             <h2>What people are saying</h2>
@@ -135,6 +145,7 @@ export default function Comments({ postData }) {
           </button>
         </form>
       </div>
+      <Alert type={alertType} onClick={() => setAlertType('noAlert')}>{switchDescription()}</Alert>
     </div>
   );
 }
