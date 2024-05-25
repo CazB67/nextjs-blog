@@ -1,0 +1,44 @@
+.commentWrapper {
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 6px;
+}
+
+.container {
+  padding: 6px;
+  border: 1px solid #e6e6e6;
+  border-radius: 6px;
+}
+
+.smallText {
+  font-size: 80%;
+}
+
+.labelWithInput {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0.5rem 0;
+  .input {
+    padding: 1rem;
+    border: 1px solid #e6e6e6;
+    border-radius: 6px;
+  }
+}
+
+.button {
+  max-width: 150px;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(7, 89, 241);
+  color: #fff;
+  &:hover {
+    background-color: rgb(5, 5, 230);
+  }
+  &:disabled {
+    cursor: none;
+    background-color: #e6e6e6;
+  }
+}

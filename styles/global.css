@@ -15,7 +15,8 @@ body {
     Helvetica Neue,
     sans-serif;
   line-height: 1.6;
-  font-size: 18px;
+  font-size: 100%;
+  background-color: rgb(242, 209, 209);
 }
 
 * {

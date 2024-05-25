@@ -3,14 +3,11 @@ import Image from "next/image";
 import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
-import Alert from "./Alert/alert";
-import { useState } from "react";
 
 const name = "Caroline Bates";
 export const siteTitle = "Blog";
 
 export default function Layout({ children, home }) {
-  const [alertType, setAlertType] = useState("success");
 
   return (
     <div className={styles.container}>
@@ -38,7 +35,8 @@ export default function Layout({ children, home }) {
               className={utilStyles.borderCircle}
               height={144}
               width={144}
-              alt=""
+              alt="Photo of Caroline Bates smiling"
+              
             />
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
           </>
@@ -54,16 +52,16 @@ export default function Layout({ children, home }) {
                 alt=""
               />
             </Link>
-            <h2 className={utilStyles.headingLg}>
+            <h1 className={utilStyles.heading2Xl}>
               <Link href="/" className={utilStyles.colorInherit}>
                 {name}
               </Link>
-            </h2>
+            </h1>
           </>
         )}
       </header>
       <main>
-        {children} <Alert onClick={() => setAlertType(alertType === 'success' ? 'error' : 'success')} type={alertType}>{alertType}</Alert>
+        {children}
       </main>
       {!home && (
         <div className={styles.backToHome}>
