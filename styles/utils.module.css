@@ -19,7 +19,6 @@
   }
 }
 
-
 .headingXl {
   font-size: 2rem;
   line-height: 1.3;
@@ -69,7 +68,6 @@
   }
 }
 
-
 .colorInherit {
   color: inherit;
 }
@@ -96,10 +94,17 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  gap: 6px;
 }
 
 .imageContainer img {
-  width: 200px;
   height: auto;
+  border-radius: 6px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.bgImage {
+  width: 100%;
   border-radius: 6px;
 }

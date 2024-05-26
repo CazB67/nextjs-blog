@@ -8,15 +8,11 @@ const name = "Caroline Bates";
 export const siteTitle = "Blog";
 
 export default function Layout({ children, home }) {
-
   return (
     <div className={styles.container}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="description"
-          content="Blog using Next.js"
-        />
+        <meta name="description" content="Blog using Next.js" />
         <meta
           property="og:image"
           content={`https://og-image.vercel.app/${encodeURI(
@@ -36,7 +32,6 @@ export default function Layout({ children, home }) {
               height={144}
               width={144}
               alt="Photo of Caroline Bates smiling"
-              
             />
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
           </>
@@ -60,13 +55,20 @@ export default function Layout({ children, home }) {
           </>
         )}
       </header>
-      <main>
-        {children}
-      </main>
-      {!home && (
+      <main>{children}</main>
+      {!home ? (
         <div className={styles.backToHome}>
           <Link href="/">← Back to home</Link>
         </div>
+      ) : (
+        <Image
+          priority
+          src="/images/kili.jpg"
+          className={utilStyles.bgImage}
+          height={144}
+          width={144}
+          alt="View of Kilimanjaro"
+        />
       )}
     </div>
   );
