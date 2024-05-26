@@ -91,3 +91,15 @@
 .lightText {
   color: #666;
 }
+
+.imageContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.imageContainer img {
+  width: 200px;
+  height: auto;
+  border-radius: 6px;
+}
