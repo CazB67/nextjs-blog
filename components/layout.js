@@ -24,7 +24,7 @@ export default function Layout({ children, home }) {
       </Head>
       <header className={styles.header}>
         {home ? (
-          <>
+          <div className={utilStyles.textBlock}>
             <Image
               priority
               src="/images/profile.jpg"
@@ -33,10 +33,13 @@ export default function Layout({ children, home }) {
               width={144}
               alt="Photo of Caroline Bates smiling"
             />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
-          </>
+            <div className={utilStyles.columnWrapper}>
+              <h1 className={utilStyles.heading2Xl}>{name}</h1>
+              <h2 className={utilStyles.headingXl}>A Blog</h2>
+            </div>
+          </div>
         ) : (
-          <>
+          <div className={utilStyles.textBlock}>
             <Link href="/">
               <Image
                 priority
@@ -47,12 +50,15 @@ export default function Layout({ children, home }) {
                 alt=""
               />
             </Link>
-            <h1 className={utilStyles.heading2Xl}>
-              <Link href="/" className={utilStyles.colorInherit}>
-                {name}
-              </Link>
-            </h1>
-          </>
+            <div className={utilStyles.columnWrapper}>
+              <h1 className={utilStyles.heading2Xl}>
+                <Link href="/" className={utilStyles.colorInherit}>
+                  {name}
+                </Link>
+              </h1>
+              <h2 className={utilStyles.headingXl}>A Blog</h2>
+            </div>
+          </div>
         )}
       </header>
       <main>{children}</main>
