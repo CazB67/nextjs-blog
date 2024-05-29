@@ -24,7 +24,9 @@
     "baseUrl": ".",
     "paths": {
       "@/components/*": ["components/*"],
-      "@/styles/*": ["styles/*"]
+      "@/styles/*": ["styles/*"],
+      "@/lib/*": ["lib/*"],
+      "@/pages/*": ["pages/*"]
     },
     "plugins": [
       {

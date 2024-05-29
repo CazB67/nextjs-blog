@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Layout, { siteTitle } from '../components/Layout/layout';
 import Link from 'next/link';
 
-import { getSortedPostsData, PostData } from '../lib/posts';
+import { getSortedPostsData, PostData } from '@/lib/posts';
 import Date from '@/components/Date/date';
 import utilStyles from '@/styles/utils.module.css'
 

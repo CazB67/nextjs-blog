@@ -1,6 +1,6 @@
 import Layout from "../../components/Layout/layout";
 import Head from "next/head";
-import { getAllPostIds, getPostData, PostData } from "../../lib/posts";
+import { getAllPostIds, getPostData, PostData } from "@/lib/posts";
 import Date2 from "../../components/Date/date";
 import utilStyles from "../../styles/utils.module.css";
 import Comments from "../../components/Comments/comments";
