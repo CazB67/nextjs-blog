@@ -1,14 +1,28 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, FormEvent } from "react";
 import { supabase } from "../../lib/supabase/server";
 import styles from "./comments.module.css";
 import Alert from "../Alert/alert";
 
-export default function Comments({ postData }) {
-  const [comment, setComment] = useState("");
-  const [email, setEmail] = useState("");
-  const [nickname, setNickname] = useState("");
-  const [commentList, setCommentList] = useState([]);
-  const [alertType, setAlertType] = useState('noAlert')
+interface Comment {
+  id: string;
+  blog_id: string;
+  nickname: string;
+  email: string;
+  comment: string;
+  created_at: Date;
+}
+
+interface PostData {
+  id: string;
+}
+
+export default function Comments({ postData }: { postData: PostData }) {
+  const [comment, setComment] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [nickname, setNickname] = useState<string>("");
+  const [commentList, setCommentList] = useState<Comment[]>([]);
+  const [alertType, setAlertType] = useState<'noAlert' | 'success' | 'error'>('noAlert');
+  const [loading, setLoading] = useState<boolean>(false);
 
   const getCommentList = async () => {
     const { data, error } = await supabase
@@ -28,9 +42,7 @@ export default function Comments({ postData }) {
     getCommentList();
   }, []);
 
-  const [loading, setLoading] = useState(false);
-
-  const onSubmit = async (e) => {
+  const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
@@ -54,23 +66,23 @@ export default function Comments({ postData }) {
         setComment("");
         setEmail("");
         setNickname("");
-        setAlertType('success')
+        setAlertType('success');
       } else {
         console.error("Error:", data.error);
-        setAlertType('error')
+        setAlertType('error');
       }
     } catch (error) {
       console.error("Network error:", error);
-      setAlertType('error')
+      setAlertType('error');
     } finally {
       setLoading(false);
     }
   };
 
   const switchDescription = () => {
-    if (alertType === 'success') return <p className={styles.description}>Your comment has been sent and is waiting approval. Once approved, it will become visible to all. </p>
-    else return <p className={styles.description}>There was an error sending your comment. Try again later.</p>
-  }
+    if (alertType === 'success') return <p className={styles.description}>Your comment has been sent and is waiting approval. Once approved, it will become visible to all. </p>;
+    else return <p className={styles.description}>There was an error sending your comment. Try again later.</p>;
+  };
 
   return (
     <div className={styles.commentWrapper}>
