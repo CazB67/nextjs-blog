@@ -1,13 +1,19 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "./layout.module.css";
-import utilStyles from "../styles/utils.module.css";
+import utilStyles from '@/styles/utils.module.css'
 import Link from "next/link";
+import { ReactNode } from "react";
 
 const name = "Caroline Bates";
 export const siteTitle = "Blog";
 
-export default function Layout({ children, home }) {
+interface LayoutProps {
+  children: ReactNode;
+  home?: boolean;
+}
+
+const Layout: React.FC<LayoutProps> = ({ children, home }) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -23,14 +29,14 @@ export default function Layout({ children, home }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <header className={styles.header}>
-        {home ? (
+        <Link href="/" className={`${home ? utilStyles.noLink : utilStyles.colorInherit}`}>
           <div className={utilStyles.textBlock}>
             <Image
               priority
               src="/images/profile.jpg"
               className={utilStyles.borderCircle}
-              height={144}
-              width={144}
+              height={108}
+              width={108}
               alt="Photo of Caroline Bates smiling"
             />
             <div className={utilStyles.columnWrapper}>
@@ -38,28 +44,7 @@ export default function Layout({ children, home }) {
               <h2 className={utilStyles.headingXl}>A Blog</h2>
             </div>
           </div>
-        ) : (
-          <div className={utilStyles.textBlock}>
-            <Link href="/">
-              <Image
-                priority
-                src="/images/profile.jpg"
-                className={utilStyles.borderCircle}
-                height={108}
-                width={108}
-                alt=""
-              />
-            </Link>
-            <div className={utilStyles.columnWrapper}>
-              <h1 className={utilStyles.heading2Xl}>
-                <Link href="/" className={utilStyles.colorInherit}>
-                  {name}
-                </Link>
-              </h1>
-              <h2 className={utilStyles.headingXl}>A Blog</h2>
-            </div>
-          </div>
-        )}
+        </Link>
       </header>
       <main>{children}</main>
       {!home ? (
@@ -71,11 +56,13 @@ export default function Layout({ children, home }) {
           priority
           src="/images/kili.jpg"
           className={utilStyles.bgImage}
-          height={144}
-          width={144}
+          height={810}
+          width={1080}
           alt="View of Kilimanjaro"
         />
       )}
     </div>
   );
 }
+
+export default Layout;

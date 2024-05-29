@@ -1,5 +1,9 @@
 import styles from "./xIcon.module.css";
-export default function XIcon({onClick}) {
+interface XIconProps {
+  onClick: () => void;
+}
+
+const Alert: React.FC<XIconProps> = ({ onClick }) => {
   return (
     <svg
       className={styles.icon}
@@ -13,3 +17,5 @@ export default function XIcon({onClick}) {
     </svg>
   );
 }
+
+export default Alert;

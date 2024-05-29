@@ -1,8 +1,15 @@
+import React, { ReactNode } from 'react';
 import styles from "./alert.module.css";
 import { clsx } from "clsx";
-import XIcon from '../XIcon/xIcon'
+import XIcon from '../Icons/XIcon/xIcon';
 
-export default function Alert({ children, type, onClick }) {
+interface AlertProps {
+  children: ReactNode;
+  type: 'success' | 'error' | 'noAlert';
+  onClick: () => void;
+}
+
+const Alert: React.FC<AlertProps> = ({ children, type, onClick }) => {
   return (
     <div
       className={clsx({
@@ -16,7 +23,7 @@ export default function Alert({ children, type, onClick }) {
         <div className={styles.modal}>
           <div className={styles.modalHeader}>
             <h5 className={styles.heading}>{type}</h5>
-           <XIcon onClick={onClick}/>
+            <XIcon onClick={onClick} />
           </div>
           {children}
         </div>
@@ -24,3 +31,5 @@ export default function Alert({ children, type, onClick }) {
     </div>
   );
 }
+
+export default Alert;
