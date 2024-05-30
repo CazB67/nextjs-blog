@@ -29,8 +29,8 @@ const Layout: React.FC<LayoutProps> = ({ children, home }) => {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <header className={styles.header}>
-        <Link href="/" className={`${utilStyles.fullWidth} ${utilStyles.colorInherit} ${home ? utilStyles.noLink : ''}`.trim()}>
-          <div className={utilStyles.textBlock}>
+        <Link href="/" className={`${utilStyles.fullWidth} ${utilStyles.colorInherit} ${home ? utilStyles.noPointerEvents : ''}`.trim()}>
+          <div className={`${utilStyles.textBlock} ${utilStyles.borderRadius_6} ${utilStyles.fullWidth}`}>
             <Image
               priority
               src="/images/profile.jpg"
@@ -55,7 +55,7 @@ const Layout: React.FC<LayoutProps> = ({ children, home }) => {
         <Image
           priority
           src="/images/kili.jpg"
-          className={utilStyles.bgImage}
+          className={`${utilStyles.heightAuto} ${utilStyles.fullWidth} ${utilStyles.borderRadius_6}`}
           height={810}
           width={1080}
           alt="View of Kilimanjaro"

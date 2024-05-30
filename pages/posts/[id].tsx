@@ -2,7 +2,7 @@ import Layout from "../../components/Layout/layout";
 import Head from "next/head";
 import { getAllPostIds, getPostData, PostData } from "@/lib/posts";
 import Date2 from "../../components/Date/date";
-import utilStyles from "../../styles/utils.module.css";
+import utilStyles from "@/styles/utils.module.css";
 import Comments from "../../components/Comments/comments";
 import { useEffect, useState } from "react";
 import { GetStaticProps, GetStaticPaths, GetStaticPropsContext } from "next";
@@ -46,7 +46,7 @@ const Post: React.FC<PostProps> = ({ postData }) => {
       // Modify the HTML content to add target="_blank" to all anchor tags
       const modifiedHtml = postData.contentHtml
         .replace(/<a /g, '<a target="_blank" ')
-        .replace('<p><img', `<div class=${utilStyles.imageContainer}><img`)
+        .replace('<p><img', `<div class=${utilStyles.imageContainer} ${utilStyles.borderRadius_6}><img`)
         .replace('wattle"></p>', 'wattle"></div>');
 
       setHtmlContent(modifiedHtml);

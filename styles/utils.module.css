@@ -41,6 +41,10 @@
   margin: 0;
 }
 
+.borderRadius_6 {
+  border-radius: 6px;
+}
+
 .listItem {
   margin: 0 0 1.25rem;
 }
@@ -63,10 +67,8 @@
   overflow: hidden;
 }
 
-.bgImage {
-  width: 100%;
+.heightAuto {
   height: auto;
-  border-radius: 6px;
 }
 
 .textBlock {
@@ -78,14 +80,12 @@
   gap: 1rem;
   justify-content: flex-start;
   align-items: flex-end;
-  border-radius: 6px;
-  width: 100%;
 }
 
 .displayNone {
   display: none;
 }
 
-.noLink {
+.noPointerEvents {
   pointer-events: none;
 }

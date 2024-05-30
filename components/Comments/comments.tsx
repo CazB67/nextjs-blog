@@ -1,6 +1,7 @@
 import { useEffect, useState, FormEvent } from "react";
 import { supabase } from "../../lib/supabase/server";
 import styles from "./comments.module.css";
+import utilStyles from "@/styles/utils.module.css";
 import Alert from "../Alert/alert";
 
 interface Comment {
@@ -85,13 +86,13 @@ export default function Comments({ postData }: { postData: PostData }) {
   };
 
   return (
-    <div className={styles.commentWrapper}>
+    <div className={`${styles.commentWrapper} ${utilStyles.borderRadius_6}`}>
       <div className={styles.comments}>
         {commentList.length > 0 && (
           <>
             <h2>What people are saying</h2>
             {commentList.map((comment, index) => (
-              <div className={styles.container} key={index}>
+              <div className={`${styles.container} ${utilStyles.borderRadius_6}`} key={index}>
                 <header className={styles.smallText}>
                   {`Posted by ${comment.nickname} on ${new Date(
                     comment.created_at
@@ -118,7 +119,7 @@ export default function Comments({ postData }: { postData: PostData }) {
               id="comment"
               onChange={(e) => setComment(e.target.value)}
               placeholder="Your comment"
-              className={styles.input}
+              className={`${styles.input} ${utilStyles.borderRadius_6}`}
               value={comment}
             />
           </div>
@@ -131,7 +132,7 @@ export default function Comments({ postData }: { postData: PostData }) {
               onChange={(e) => setEmail(e.target.value)}
               type="email"
               placeholder="Your email"
-              className={styles.input}
+              className={`${styles.input} ${utilStyles.borderRadius_6}`}
               value={email}
             />
           </div>
@@ -144,7 +145,7 @@ export default function Comments({ postData }: { postData: PostData }) {
               onChange={(e) => setNickname(e.target.value)}
               type="text"
               placeholder="Your nickname"
-              className={styles.input}
+              className={`${styles.input} ${utilStyles.borderRadius_6}`}
               value={nickname}
             />
           </div>

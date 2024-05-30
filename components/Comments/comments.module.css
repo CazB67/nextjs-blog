@@ -1,13 +1,11 @@
 .commentWrapper {
   padding: 1rem;
   background-color: #fff;
-  border-radius: 6px;
 }
 
 .container {
   padding: 6px;
   border: 1px solid #e6e6e6;
-  border-radius: 6px;
 }
 
 .smallText {
@@ -23,7 +21,6 @@
   .input {
     padding: 1rem;
     border: 1px solid #e6e6e6;
-    border-radius: 6px;
   }
 }
 
