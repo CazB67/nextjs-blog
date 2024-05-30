@@ -1,20 +1,37 @@
 import { NextResponse } from "next/server";
-import { supabase } from "../../../../lib/supabase/server";
+import { supabase } from "@/lib/supabase/server";
 
-export async function POST(req) {
+interface RequestBody {
+  blog_id: string;
+  email: string;
+  comment: string;
+  nickname: string;
+  uuid?: string;
+}
+
+interface Comment {
+  id?: string;
+  blog_id: string;
+  email: string;
+  nickname: string;
+  comment: string;
+  created_at?: string;
+}
+
+export async function POST(req: Request): Promise<Response> {
   try {
-    const body = await req.json();
-    const { blog_id, email, comment, nickname, uuid } = body;
+    const body: RequestBody = await req.json();
+    const { blog_id, email, comment, nickname } = body;
 
     const { data, error } = await supabase
       .from("comments")
-      .insert({
+      .insert<Comment>({
         blog_id,
         email,
         nickname,
         comment,
       })
-      .select("*"); 
+      .select("*");
 
     if (error) {
       console.error("Supabase error:", error);
