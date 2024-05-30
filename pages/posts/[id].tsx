@@ -3,7 +3,7 @@ import Head from "next/head";
 import { getAllPostIds, getPostData, PostData } from "@/lib/posts";
 import Date2 from "../../components/Date/date";
 import utilStyles from "@/styles/utils.module.css";
-import Comments from "../../components/Comments/comments";
+import Comments from "@/components/Comments/comments";
 import { useEffect, useState } from "react";
 import { GetStaticProps, GetStaticPaths, GetStaticPropsContext } from "next";
 
@@ -59,7 +59,7 @@ const Post: React.FC<PostProps> = ({ postData }) => {
         <title>{postData.title}</title>
       </Head>
       <article>
-        <h1 className={utilStyles.headingLg}>{postData.title}</h1>
+        <h1 className={`${utilStyles.headingLg} ${utilStyles.fontWeight800}`}>{postData.title}</h1>
         <div className={utilStyles.lightText}>
           <Date2 dateString={postData.date} />
         </div>

@@ -30,7 +30,7 @@ const Layout: React.FC<LayoutProps> = ({ children, home }) => {
       </Head>
       <header className={styles.header}>
         <Link href="/" className={`${utilStyles.fullWidth} ${utilStyles.colorInherit} ${home ? utilStyles.noPointerEvents : ''}`.trim()}>
-          <div className={`${utilStyles.textBlock} ${utilStyles.borderRadius_6} ${utilStyles.fullWidth}`}>
+          <div className={`${utilStyles.textBlock} ${utilStyles.colorWhite} ${utilStyles.borderRadius_6} ${utilStyles.padding_1} ${utilStyles.fullWidth}`}>
             <Image
               priority
               src="/images/profile.jpg"
@@ -40,8 +40,8 @@ const Layout: React.FC<LayoutProps> = ({ children, home }) => {
               alt="Photo of Caroline Bates smiling"
             />
             <div className={utilStyles.columnWrapper}>
-              <h1 className={utilStyles.heading2Xl}>{name}</h1>
-              <h2 className={utilStyles.headingLg}>A Blog</h2>
+              <h1 className={`${utilStyles.heading2Xl} ${utilStyles.fontWeight800}`}>{name}</h1>
+              <h2 className={`${utilStyles.headingLg} ${utilStyles.fontWeight800}`}>A Blog</h2>
             </div>
           </div>
         </Link>

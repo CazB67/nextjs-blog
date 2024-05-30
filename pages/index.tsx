@@ -32,7 +32,7 @@ const Home: React.FC<HomeProps> = ({ allPostsData }) => {
         </p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.paddingTop_1}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
+        <h2 className={`${utilStyles.headingLg} ${utilStyles.fontWeight800}`}>Blog</h2>
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>

@@ -1,7 +1,34 @@
+.borderRadius_6 {
+  border-radius: 6px;
+}
+
+.colorInherit {
+  color: inherit;
+}
+
+.colorWhite {
+  color: #fff;
+}
+
+.dislayFlex {
+  display: flex;
+}
+
+.displayNone {
+  display: none;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.fontWeight800 {
+  font-weight: 800;
+}
+
 .heading2Xl {
   margin: 0;
   line-height: 1.2;
-  font-weight: 800;
   font-size: 2rem;
   letter-spacing: 0.25rem;
   @media (max-width: 600px) {
@@ -13,9 +40,9 @@
 .headingLg {
   font-size: 1.5rem;
   line-height: 1.3;
-  font-weight: 800;
   margin: 0;
   letter-spacing: 0.25rem;
+  text-transform: capitalize;
 }
 
 .headingMd {
@@ -23,34 +50,8 @@
   line-height: 1.5;
 }
 
-.colorInherit {
-  color: inherit;
-}
-
-.fullWidth {
-  width: 100%;
-}
-
-.paddingTop_1 {
-  padding-top: 1px;
-}
-
-.list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.borderRadius_6 {
-  border-radius: 6px;
-}
-
-.listItem {
-  margin: 0 0 1.25rem;
-}
-
-.lightText {
-  color: #666;
+.heightAuto {
+  height: auto;
 }
 
 .imageContainer {
@@ -67,25 +68,37 @@
   overflow: hidden;
 }
 
-.heightAuto {
-  height: auto;
+.lightText {
+  color: #666;
 }
 
-.textBlock {
-  background-color: black;
-  color: white;
-  padding: 1rem;
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  justify-content: flex-start;
-  align-items: flex-end;
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.displayNone {
-  display: none;
+.listItem {
+  margin: 0 0 1.25rem;
 }
 
 .noPointerEvents {
   pointer-events: none;
+}
+
+.paddingTop_1 {
+  padding-top: 1px;
+}
+
+.padding_1 {
+  padding: 1rem;
+}
+
+.textBlock {
+  display: flex;
+  background-color: #000;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: flex-start;
+  align-items: flex-end;
 }

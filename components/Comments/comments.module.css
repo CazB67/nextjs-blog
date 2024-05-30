@@ -1,5 +1,4 @@
 .commentWrapper {
-  padding: 1rem;
   background-color: #fff;
 }
 
@@ -19,7 +18,6 @@
   gap: 6px;
   padding: 0.5rem 0;
   .input {
-    padding: 1rem;
     border: 1px solid #e6e6e6;
   }
 }
@@ -31,7 +29,6 @@
   border: none;
   cursor: pointer;
   background-color: rgb(7, 89, 241);
-  color: #fff;
   &:hover {
     background-color: rgb(5, 5, 230);
   }
@@ -42,9 +39,8 @@
 }
 
 .description {
-  padding: 1rem;
   margin: 0;
-  color: black;
+  color: #2c3e50;
   font-size: 90%;
 }
 

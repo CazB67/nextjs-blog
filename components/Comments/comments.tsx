@@ -81,12 +81,12 @@ export default function Comments({ postData }: { postData: PostData }) {
   };
 
   const switchDescription = () => {
-    if (alertType === 'success') return <p className={styles.description}>Your comment has been sent and is waiting approval. Once approved, it will become visible to all. </p>;
-    else return <p className={styles.description}>There was an error sending your comment. Try again later.</p>;
+    if (alertType === 'success') return <p className={`${styles.description} ${utilStyles.padding_1}`}>Your comment has been sent and is waiting approval. Once approved, it will become visible to all. </p>;
+    else return <p className={`${styles.description} ${utilStyles.padding_1}`}>There was an error sending your comment. Try again later.</p>;
   };
 
   return (
-    <div className={`${styles.commentWrapper} ${utilStyles.borderRadius_6}`}>
+    <div className={`${styles.commentWrapper} ${utilStyles.borderRadius_6} ${utilStyles.padding_1}`}>
       <div className={styles.comments}>
         {commentList.length > 0 && (
           <>
@@ -119,12 +119,12 @@ export default function Comments({ postData }: { postData: PostData }) {
               id="comment"
               onChange={(e) => setComment(e.target.value)}
               placeholder="Your comment"
-              className={`${styles.input} ${utilStyles.borderRadius_6}`}
+              className={`${styles.input} ${utilStyles.borderRadius_6} ${utilStyles.padding_1}`}
               value={comment}
             />
           </div>
           <div className={styles.labelWithInput}>
-            <label htmlFor="email" className="mb-2 mt-6 text-lg block">
+            <label htmlFor="email">
               Email
             </label>
             <input
@@ -132,12 +132,13 @@ export default function Comments({ postData }: { postData: PostData }) {
               onChange={(e) => setEmail(e.target.value)}
               type="email"
               placeholder="Your email"
-              className={`${styles.input} ${utilStyles.borderRadius_6}`}
+              className={`${styles.input} ${utilStyles.borderRadius_6} ${utilStyles.padding_1}`}
               value={email}
             />
           </div>
-          <div className={styles.labelWithInput}>
-            <label htmlFor="nickname" className="mb-2 mt-6 text-lg block">
+          <div className=
+          {styles.labelWithInput}>
+            <label htmlFor="nickname">
               Nickname
             </label>
             <input
@@ -145,12 +146,12 @@ export default function Comments({ postData }: { postData: PostData }) {
               onChange={(e) => setNickname(e.target.value)}
               type="text"
               placeholder="Your nickname"
-              className={`${styles.input} ${utilStyles.borderRadius_6}`}
+              className={`${styles.input} ${utilStyles.borderRadius_6} ${utilStyles.padding_1}`}
               value={nickname}
             />
           </div>
           <button
-            className={styles.button}
+            className={`${styles.button} ${utilStyles.colorWhite}`}
             type="submit"
             disabled={loading || !comment}
           >

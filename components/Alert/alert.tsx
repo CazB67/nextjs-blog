@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 import styles from "./alert.module.css";
+import utilStyles from '@/styles/utils.module.css'
 import { clsx } from "clsx";
 import XIcon from '../Icons/XIcon/xIcon';
 
@@ -15,7 +16,7 @@ const Alert: React.FC<AlertProps> = ({ children, type, onClick }) => {
       className={clsx({
         [styles.success]: type === "success",
         [styles.error]: type === "error",
-        [styles.noAlert]: type === "noAlert",
+        [utilStyles.displayNone]: type === "noAlert",
       })}
     >
       <div className={styles.darkBG} onClick={onClick} />
