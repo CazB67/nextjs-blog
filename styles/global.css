@@ -1,5 +1,5 @@
 html,
-body {
+body, input, textarea {
   padding: 0;
   margin: 0;
   font-family:
@@ -16,7 +16,11 @@ body {
     sans-serif;
   line-height: 1.6;
   font-size: 100%;
-  background-color: rgb(242, 209, 209);
+  background-color: rgb(248, 221, 221);
+}
+
+input, textarea {
+  background-color: #fafafa;
 }
 
 * {
@@ -24,7 +28,7 @@ body {
 }
 
 a {
-  color: #083e7b;
+  color: #02448f;
   text-decoration: none;
 }
 

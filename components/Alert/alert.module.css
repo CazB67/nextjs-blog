@@ -28,8 +28,7 @@
 .modal {
   width: 250px;
   height: 200px;
-  background: white;
-  color: white;
+  background: #fafafa;
   z-index: 10;
   border-radius: 16px;
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
@@ -37,7 +36,7 @@
 
 .modalHeader {
   height: 50px;
-  background: white;
+  background: #fafafa;
   overflow: hidden;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;

@@ -1,15 +1,6 @@
-.commentWrapper {
-  background-color: #fff;
-}
-
 .container {
   padding: 6px;
   border: 1px solid #e6e6e6;
-}
-
-.smallText {
-  font-size: 80%;
-  color: rgb(128, 123, 123);
 }
 
 .labelWithInput {

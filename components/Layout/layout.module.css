@@ -19,8 +19,8 @@
   .profileImage {
     width: 100px; /* Define a fixed width */
     height: 100px; /* Define a fixed height */
-    background-color: #e6e2e5;
-    border: 4px solid #e6e2e5;
+    background-color: #fafafa;
+    border: 4px solid #fafafa;
     border-radius: 9999px; /* Start as a circle */
     animation: shapeTransition 6s ease-in-out 1s forwards; /* Apply the animation with a longer duration */
   }

@@ -86,14 +86,14 @@ export default function Comments({ postData }: { postData: PostData }) {
   };
 
   return (
-    <div className={`${styles.commentWrapper} ${utilStyles.borderRadius_6} ${utilStyles.padding_1}`}>
+    <div className={`${utilStyles.backgroundWhite} ${utilStyles.borderRadius_6} ${utilStyles.padding_1}`}>
       <div className={styles.comments}>
         {commentList.length > 0 && (
           <>
             <h2>What people are saying</h2>
             {commentList.map((comment, index) => (
               <div className={`${styles.container} ${utilStyles.borderRadius_6}`} key={index}>
-                <header className={styles.smallText}>
+                <header className={`${utilStyles.smallText} ${utilStyles.lightText}`}>
                   {`Posted by ${comment.nickname} on ${new Date(
                     comment.created_at
                   ).toLocaleTimeString("en-US", {
@@ -112,7 +112,7 @@ export default function Comments({ postData }: { postData: PostData }) {
         <h1 className="text-4xl font-bold ">Share your thoughts</h1>
         <form className={styles.labelWithInput} onSubmit={onSubmit}>
           <div className={styles.labelWithInput}>
-            <label htmlFor="comment" className="mb-2 mt-6 text-lg block">
+            <label htmlFor="comment">
               Comment
             </label>
             <textarea
