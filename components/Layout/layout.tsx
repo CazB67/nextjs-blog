@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "./layout.module.css";
-import utilStyles from '@/styles/utils.module.css'
+import utilStyles from '@/styles/utils.module.css';
 import Link from "next/link";
 import { ReactNode } from "react";
 
@@ -29,19 +29,19 @@ const Layout: React.FC<LayoutProps> = ({ children, home }) => {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <header className={styles.header}>
-        <Link href="/" className={`${home ? utilStyles.noLink : utilStyles.colorInherit}`}>
+        <Link href="/" className={`${utilStyles.fullWidth} ${utilStyles.colorInherit} ${home ? utilStyles.noLink : ''}`.trim()}>
           <div className={utilStyles.textBlock}>
             <Image
               priority
               src="/images/profile.jpg"
-              className={utilStyles.borderCircle}
+              className={styles.profileImage}
               height={108}
               width={108}
               alt="Photo of Caroline Bates smiling"
             />
             <div className={utilStyles.columnWrapper}>
               <h1 className={utilStyles.heading2Xl}>{name}</h1>
-              <h2 className={utilStyles.headingXl}>A Blog</h2>
+              <h2 className={utilStyles.headingLg}>A Blog</h2>
             </div>
           </div>
         </Link>

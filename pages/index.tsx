@@ -31,7 +31,7 @@ const Home: React.FC<HomeProps> = ({ allPostsData }) => {
          This is a page to jot down down my random ramblings and play with css and Next.JS.
         </p>
       </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+      <section className={`${utilStyles.headingMd} ${utilStyles.paddingTop_1}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (

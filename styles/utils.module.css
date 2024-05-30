@@ -10,7 +10,7 @@
   }
 }
 
-.headingXl {
+.headingLg {
   font-size: 1.5rem;
   line-height: 1.3;
   font-weight: 800;
@@ -18,50 +18,20 @@
   letter-spacing: 0.25rem;
 }
 
-.headingLg {
-  font-size: 1.5rem;
-  line-height: 1.4;
-  margin: 1rem 0;
-}
-
 .headingMd {
   font-size: 1.2rem;
   line-height: 1.5;
 }
 
-.borderCircle {
-  width: 100px; /* Define a fixed width */
-  height: 100px; /* Define a fixed height */
-  background-color: #e6e2e5;
-  border: 4px solid #e6e2e5;
-  border-radius: 9999px; /* Start as a circle */
-  animation: shapeTransition 6s ease-in-out 1s forwards; /* Apply the animation with a longer duration */
-}
-
-@keyframes shapeTransition {
-  0% {
-    border-radius: 9999px;
-  }
-  25% {
-    border-radius: 50%;
-  }
-  50% {
-    border-radius: 25%;
-  }
-  75% {
-    border-radius: 12px;
-  }
-  100% {
-    border-radius: 6px;
-  }
-}
-
 .colorInherit {
   color: inherit;
+}
+
+.fullWidth {
   width: 100%;
 }
 
-.padding1px {
+.paddingTop_1 {
   padding-top: 1px;
 }
 
@@ -118,6 +88,4 @@
 
 .noLink {
   pointer-events: none;
-  color: inherit;
-  width: 100%;
 }
