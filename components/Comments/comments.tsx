@@ -151,7 +151,7 @@ export default function Comments({ postData }: { postData: PostData }) {
             />
           </div>
           <button
-            className={`${styles.button} ${utilStyles.colorWhite}`}
+            className={`${styles.button} ${utilStyles.colorWhite} ${utilStyles.borderRadius_6}`}
             type="submit"
             disabled={loading || !comment}
           >
