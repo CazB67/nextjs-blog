@@ -1,9 +1,5 @@
-.success {
-  color: green;
-  cursor: pointer;
-}
-.error {
-  color: red;
+.success, .error {
+  color: #2c3e50;
   cursor: pointer;
 }
 
@@ -45,7 +41,6 @@
 
 .heading {
   padding: 10px;
-  color: #2c3e50;
   font-weight: 500;
   font-size: 18px;
   text-align: center;
