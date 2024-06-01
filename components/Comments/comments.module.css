@@ -3,14 +3,8 @@
   border: 1px solid #e6e6e6;
 }
 
-.labelWithInput {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding: 0.5rem 0;
-  .input {
-    border: 1px solid #e6e6e6;
-  }
+.input {
+  border: 1px solid #e6e6e6;
 }
 
 .button {
@@ -40,10 +34,4 @@
   right: 6px;
   height: 16px;
   width: 16px;
-}
-
-.comments {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
 }

@@ -87,7 +87,7 @@ export default function Comments({ postData }: { postData: PostData }) {
 
   return (
     <div className={`${utilStyles.backgroundWhite} ${utilStyles.borderRadius_6} ${utilStyles.padding_1}`}>
-      <div className={styles.comments}>
+      <div className={utilStyles.flexColumn}>
         {commentList.length > 0 && (
           <>
             <h2>What people are saying</h2>
@@ -108,10 +108,10 @@ export default function Comments({ postData }: { postData: PostData }) {
           </>
         )}
       </div>
-      <div className="min-w-[600px]">
-        <h1 className="text-4xl font-bold ">Share your thoughts</h1>
-        <form className={styles.labelWithInput} onSubmit={onSubmit}>
-          <div className={styles.labelWithInput}>
+      <div className={utilStyles.flexColumn}>
+        <h2>Share your thoughts</h2>
+        <form className={utilStyles.flexColumn} onSubmit={onSubmit}>
+          <div className={utilStyles.flexColumn}>
             <label htmlFor="comment">
               Comment
             </label>
@@ -123,7 +123,7 @@ export default function Comments({ postData }: { postData: PostData }) {
               value={comment}
             />
           </div>
-          <div className={styles.labelWithInput}>
+          <div className={utilStyles.flexColumn}>
             <label htmlFor="email">
               Email
             </label>
@@ -136,8 +136,7 @@ export default function Comments({ postData }: { postData: PostData }) {
               value={email}
             />
           </div>
-          <div className=
-          {styles.labelWithInput}>
+          <div className={utilStyles.flexColumn}>
             <label htmlFor="nickname">
               Nickname
             </label>
