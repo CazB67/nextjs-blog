@@ -23,7 +23,7 @@ const Alert: React.FC<AlertProps> = ({ children, type, onClick }) => {
       <div className={styles.centered}>
         <div className={styles.modal}>
           <div className={styles.modalHeader}>
-            <h5 className={styles.heading}>{type}</h5>
+            <h2 className={styles.heading}>{type}</h2>
             <XIcon onClick={onClick} />
           </div>
           {children}
